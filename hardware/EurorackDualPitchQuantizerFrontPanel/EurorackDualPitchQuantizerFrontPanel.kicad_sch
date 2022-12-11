@@ -4,6 +4,14 @@
 
   (paper "A4")
 
+  (title_block
+    (title "Dual Pitch Quantizer Front Panel")
+    (date "2022-12-11")
+    (rev "1.2")
+    (company "Ilmari Hirvonen")
+    (comment 1 "License: CERN-OHL-S v2")
+  )
+
   (lib_symbols
     (symbol "Connector:Conn_01x01_Male" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 2.54 0)
