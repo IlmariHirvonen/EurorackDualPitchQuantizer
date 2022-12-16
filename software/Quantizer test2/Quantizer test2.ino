@@ -45,8 +45,12 @@ int search(int arr[], int n, int x)
     return -1; 
 }
 
-
-
+int findQuantizedNote(int input)
+{
+  int octave = input / 580;
+  int note = search(all_notes, 12, input % 580);
+}
+//the octave can be found by dividing by 580 and the note by modulo 580. I need to have a list of 12 notes and do a quicker search through them. No need for sorting.
 
 int c[]  = {0, 580, 580*2, 580*3, 580*4, 580*5, 580*6};
 int cs[] = {48, 48 + 580, 48 + 580*2, 48 + 580*3, 48 + 580*4, 48 + 580*5, 48 + 580*6};
@@ -61,19 +65,8 @@ int a[]  = {435, 435 + 580, 435 + 580*2, 435 + 580*3, 435 + 580*4, 435 + 580*5, 
 int as[] = {483, 483 + 580, 483 + 580*2, 483 + 580*3, 483 + 580*4, 483 + 580*5, 483 + 580*6};
 int b[]  = {532, 532 + 580, 532 + 580*2, 532 + 580*3, 532 + 580*4, 532 + 580*5, 532 + 580*6};
 
-//different lines commented out to test different keys
-int all_notes[] = {0, 580, 580*2, 580*3, 580*4, 580*5, 580*6,
-48, 48 + 580, 48 + 580*2, 48 + 580*3, 48 + 580*4, 48 + 580*5, 48 + 580*6,
-97, 97 + 580, 97 + 580*2, 97 + 580*3, 97 + 580*4, 97 + 580*5, 97 + 580*6,
-145, 145 + 580, 145 + 580*2, 145 + 580*3, 145 + 580*4, 145 + 580*5, 145 + 580*6,
-193, 193 + 580, 193 + 580*2, 193 + 580*3, 193 + 580*4, 193 + 580*5, 193 + 580*6,
-241, 241 + 580, 241 + 580*2, 241 + 580*3, 241 + 580*4, 241 + 580*5, 241 + 580*6,
-290, 290 + 580, 290 + 580*2, 290 + 580*3, 290 + 580*4, 290 + 580*5, 290 + 580*6,
-338, 338 + 580, 338 + 580*2, 338 + 580*3, 338 + 580*4, 338 + 580*5, 338 + 580*6,
-387, 387 + 580, 387 + 580*2, 387 + 580*3, 387 + 580*4, 387 + 580*5, 387 + 580*6,
-435, 435 + 580, 435 + 580*2, 435 + 580*3, 435 + 580*4, 435 + 580*5, 435 + 580*6,
-483, 483 + 580, 483 + 580*2, 483 + 580*3, 483 + 580*4, 483 + 580*5, 483 + 580*6,
-532, 532 + 580, 532 + 580*2, 532 + 580*3, 532 + 580*4, 532 + 580*5, 532 + 580*6};
+//Notes in chromatic order from C to B
+int all_notes[] = {0, 48, 97, 145, 193, 241, 290, 338, 387, 435, 483, 532};
 
 //If making this into a better product there should be a way to select the notes and maybe using them to calculate
 //the minimum distance between notes to reduce unesecary time looking up and sending data.
